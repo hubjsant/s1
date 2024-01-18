@@ -1,5 +1,20 @@
 export default {
 
+	signIn: async () => {
+		const email = inp_email.text;
+		const password = inp_password.text;
+
+		const [user] = await findUserByEmailAndPassword.run();
+
+		if (user) {
+			storeValue('user', user)
+				.then(() => navigateTo('Home'))
+		} else {
+			return showAlert('Usuário e ou senha inválido(s)', 'error');
+		}
+	}
+	
+	/*
 	defaultTab: 'Sign In',
 
 	setDefaultTab: (newTab) => {
@@ -45,4 +60,5 @@ export default {
 			return showAlert('Error creating new user', 'error');
 		}
 	},
+	*/
 }

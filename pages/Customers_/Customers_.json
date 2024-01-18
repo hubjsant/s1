@@ -34,12 +34,11 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  const customerOrders = await getCustomerOrders.run();\n  const data = customerOrders.map(o => {\n    return {\n      OrderId: o.id,\n      OrderDate: new Date(o.created).toDateString(),\n      Items: o.order_line_count,\n      Amount: o.total.toLocaleString('en-US', {\n        style: 'currency',\n        currency: 'USD'\n      }),\n      Status: o.label\n    };\n  });\n  return data;\n}"
+                "SELECT \"order\".*, order_status.label, \n(SELECT COUNT(*) FROM order_line WHERE order_line.order_id = \"order\".id) AS order_line_count\nFROM \"order\"\nINNER JOIN order_status ON \"order\".order_status_id = order_status.id \nWHERE account_id = {{tbl_customers.selectedRow.CustomerID}};\n\n\n",
+                "tbl_customers.selectedRow.CustomerID"
               ],
               "timeoutInMillisecond": 10000
-            }
-          ],
-          [
+            },
             {
               "id": "Customers__utils.getCustomers",
               "name": "utils.getCustomers",
@@ -47,7 +46,9 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  const customers = await getCustomers.run();\n  return customers.map(c => {\n    return {\n      ID: utils.idConverter(c.id),\n      CustomerID: c.id,\n      Name: c.first_name + ' ' + c.last_name,\n      Phone: c.phone,\n      Email: c.email,\n      BillingAddress: `${c.address1}${c.city || ''}${c.country || ''}`,\n      ShippingAddress: `${c.address1}${c.city || ''}${c.country || ''}`\n    };\n  });\n}"
+                "tbl_customers.pageSize",
+                "(tbl_customers.pageNo - 1) * tbl_customers.pageSize",
+                "SELECT account.*, person.first_name, person.last_name, person.email, person.phone, location.address1, location.city, location.state, location.country, location.postal_code FROM account\nLEFT JOIN person ON account.customer_id = person.id\nLEFT JOIN location ON person.id = location.person\nLIMIT {{tbl_customers.pageSize}} OFFSET {{(tbl_customers.pageNo - 1) * tbl_customers.pageSize}};"
               ],
               "timeoutInMillisecond": 10000
             }

@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "signOut",
-    "fullyQualifiedName": "functions.signOut",
+    "name": "isAuthenticated",
+    "fullyQualifiedName": "functions.isAuthenticated",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Home_",
-    "collectionId": "Home__functions",
+    "pageId": "Home",
+    "collectionId": "Home_functions",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -22,7 +22,7 @@
       "selfReferencingDataPaths": [],
       "jsArguments": []
     },
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -31,13 +31,13 @@
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "userSetOnLoad": false,
+    "userSetOnLoad": true,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2024-01-18T21:44:40Z"
+    "createdAt": "2024-01-18T23:01:15Z"
   },
-  "id": "Home__functions.signOut",
+  "id": "Home_functions.isAuthenticated",
   "deleted": false,
-  "gitSyncId": "65a99b36410d9271e66ae673_2024-01-18T21:44:40.374951678Z"
+  "gitSyncId": "65a9a26b878a887412981aa6_65a9adbbfc34c0678e343303"
 }

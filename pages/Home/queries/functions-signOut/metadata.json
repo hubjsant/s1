@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "register",
-    "fullyQualifiedName": "functions.register",
+    "name": "signOut",
+    "fullyQualifiedName": "functions.signOut",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Authentication",
-    "collectionId": "Authentication_functions",
+    "pageId": "Home",
+    "collectionId": "Home_functions",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -35,9 +35,9 @@
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2024-01-18T21:44:40Z"
+    "createdAt": "2024-01-18T22:58:25Z"
   },
-  "id": "Authentication_functions.register",
+  "id": "Home_functions.signOut",
   "deleted": false,
-  "gitSyncId": "65a99b36410d9271e66ae673_2024-01-18T21:44:40.374788197Z"
+  "gitSyncId": "65a9a26b878a887412981aa6_65a9ad11fc34c0678e343300"
 }
