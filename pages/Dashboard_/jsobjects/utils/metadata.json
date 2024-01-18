@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "utils",
+    "pageId": "Dashboard_",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Dashboard__utils",
+  "deleted": false,
+  "gitSyncId": "65a99b36410d9271e66ae673_65a99b7f410d9271e66ae6c8"
+}
